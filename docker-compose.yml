@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+
+  db:
+    image: postgres:15.4-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: root
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-go-starter:/var/lib/postgresql/data
+
+volumes:
+  pg-go-starter:
